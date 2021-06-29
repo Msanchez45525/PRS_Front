@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/about/about.component';
 import { E404Component } from './core/e404/e404.component';
 import { HomeComponent } from './core/home/home.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserListComponent } from './user/user-list/user-list.component';
 
 const routes: Routes = [
   {path: '' , redirectTo: '/menu', pathMatch: 'full'},
@@ -12,6 +16,14 @@ const routes: Routes = [
   {path: 'e404', component: E404Component},
 
 
+
+
+
+  {path: 'user/list' , component: UserListComponent},
+  {path: 'user/detail/:id' , component: UserDetailComponent},
+  {path: 'user/create' , component: UserCreateComponent},
+  {path: 'user/edit/:id' , component: UserEditComponent},
+  {path: 'user' , redirectTo: 'user/list', pathMatch: 'full'},
 
 
 

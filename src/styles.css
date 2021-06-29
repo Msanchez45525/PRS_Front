@@ -1,3 +1,7 @@
 body {
-    background-color: grey;
+    background-color:skyblue;
+}
+
+#component {
+    margin: 10px;
 }

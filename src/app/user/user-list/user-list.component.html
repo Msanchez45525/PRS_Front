@@ -1,0 +1,43 @@
+<app-menu></app-menu>
+<div id="component">
+    <div id="component-header">
+        <a routerLink="/user/create">Create</a> | <input [(ngModel)]="searchCriteria" type="text" placeholder="Search" >
+    </div>
+    <hr>
+    <div id="component-content">
+        <table class="table table-striped table-sm">
+            <tr>
+                <th><a (click)="sortFn('id')" class="btn btn-link">Id</a></th>
+                <th><a (click)="sortFn('username')" class="btn btn-link">Username</a></th>
+                <th>Password</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>IsReviewer</th>
+                <th>IsAdmin</th>
+                <th>Actions</th>
+            </tr>
+            <tr *ngFor="let u of users  | sort: sortColumn:sortAsc " >
+                <td>{{u.id}}</td>
+                <td>{{u.username}}</td>
+                <td>{{u.password}}</td>
+                <td>{{u.firstname}}</td>
+                <td>{{u.lastname}}</td>
+                <td>{{u.phone}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.isReviewer ? "Yes" : "No"}}</td>
+                <td>{{u.isAdmin ? "Yes" : "No"}}</td>
+                <td>
+                    <span>
+                        <a routerLink="/user/detail/{{u.id}}">Detail</a>
+                    </span>
+                    <span> | </span>
+                    <span>
+                        <a routerLink="/user/edit/{{u.id}}">Edit</a>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
