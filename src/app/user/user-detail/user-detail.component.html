@@ -1,1 +1,42 @@
-<p>user-detail works!</p>
+<app-menu></app-menu>
+
+<div>
+    <table class="table table-sm">
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="user.id" type="number" disabled></td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td><input [(ngModel)]="user.username" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input [(ngModel)]="user.password" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>Firstname</td>
+            <td><input [(ngModel)]="user.firstname" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>Lastname</td>
+            <td><input [(ngModel)]="user.lastname" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input [(ngModel)]="user.phone" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input [(ngModel)]="user.email" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>IsReviewer</td>
+            <td><input [(ngModel)]="user.isReviewer" type="boolean" disabled></td>
+        </tr>
+        <tr>
+            <td>IsAdmin</td>
+            <td><input [(ngModel)]="user.isAdmin" type="boolean" disabled></td>
+        </tr>
+    </table>
+</div> 
