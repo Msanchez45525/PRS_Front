@@ -1,7 +1,12 @@
+
+<h3>Capstone Project</h3>
+<hr>
 <nav>
-    <ul>
-        <li *ngFor="let m of menus">
-            <a routerLink="{{m.route}}">{{m.display}}</a>
-        </li>
-    </ul>
+    <div>
+        <ul id="mainMenu">
+            <li *ngFor="let m of menus">
+                <a routerLink="{{m.route}}">{{m.display}}</a>
+            </li>
+        </ul>
+    </div>
 </nav>
