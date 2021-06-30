@@ -1,1 +1,41 @@
-<p>user-create works!</p>
+<div>
+    <table class="table table-sm">
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="user.id" type="number" name="Id" disabled></td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td><input [(ngModel)]="user.username" type="text" name="username" placeholder="Username"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input [(ngModel)]="user.password" type="password" name="passwprd" placeholder="Password"></td>
+        </tr>
+        <tr>
+            <td>Firstname</td>
+            <td><input [(ngModel)]="user.firstname" type="text" name="firstname" placeholder="Firstname" ></td>
+        </tr>
+        <tr>
+            <td>Lastname</td>
+            <td><input [(ngModel)]="user.lastname" type="text" name="lastname" placeholder="Lastname" ></td>
+        </tr>
+        <tr>
+            <td>Phome</td>
+            <td><input [(ngModel)]="user.phone" type="text" name="phone" placeholder="Phone" ></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input [(ngModel)]="user.email" type="text" name="email" placeholder="Email" ></td>
+        </tr>
+        <tr>
+            <td>IsReviewer</td>
+            <td><input [(ngModel)]="user.isReviewer" type="checkbox" ></td>
+        </tr>
+        <tr>
+            <td>IsAdmin</td>
+            <td><input [(ngModel)]="user.isAdmin" type="checkbox" ></td>
+        </tr>
+    </table>
+    <button (click)='save()' class="btn btn-primary">Save</button>
+</div>

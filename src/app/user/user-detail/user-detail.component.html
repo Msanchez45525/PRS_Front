@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 <div>
-    <table class="table table-sm">
+    <table class="table table-sm" *ngIf="user">
         <tr>
             <td>Id</td>
             <td><input [(ngModel)]="user.id" type="number" disabled></td>
@@ -32,11 +32,14 @@
         </tr>
         <tr>
             <td>IsReviewer</td>
-            <td><input [(ngModel)]="user.isReviewer" type="boolean" disabled></td>
+            <td><input [(ngModel)]="user.isReviewer" type="checkbox" disabled></td>
         </tr>
         <tr>
             <td>IsAdmin</td>
-            <td><input [(ngModel)]="user.isAdmin" type="boolean" disabled></td>
+            <td><input [(ngModel)]="user.isAdmin" type="checkbox" disabled></td>
         </tr>
+        <div>
+            <button class="btn btn-danger" (click)="deleteUser()">Delete</button>
+        </div>
     </table>
-</div> 
+</div>
