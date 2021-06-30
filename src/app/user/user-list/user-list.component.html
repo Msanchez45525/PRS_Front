@@ -18,7 +18,7 @@
                 <th>IsAdmin</th>
                 <th>Actions</th>
             </tr>
-            <tr *ngFor="let u of users  | sort: sortColumn:sortAsc " >
+            <tr *ngFor="let u of users | userSearch:searchCriteria  | sort: sortColumn:sortAsc " >
                 <td>{{u.id}}</td>
                 <td>{{u.username}}</td>
                 <td>{{u.password}}</td>

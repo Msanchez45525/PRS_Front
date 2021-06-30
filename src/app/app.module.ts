@@ -18,6 +18,7 @@ import { VendorListComponent } from './vendor/vendor-list/vendor-list.component'
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+import { UserSearchPipe } from './user/user-search.pipe';
 
 
 
@@ -38,6 +39,7 @@ import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component'
     VendorDetailComponent,
     VendorCreateComponent,
     VendorEditComponent,
+    UserSearchPipe,
     
   ],
   imports: [
