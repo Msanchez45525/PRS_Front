@@ -1,0 +1,8 @@
+tr{
+    text-align: center;
+}
+table, tr , th,  td{
+    border-width: 2px; color: black; border-color: black;
+    align-items: center;
+    
+}

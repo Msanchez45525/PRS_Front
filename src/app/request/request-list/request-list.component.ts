@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product.class';
-import { ProductService } from '../product.service';
+import { RequestService } from '../request.service';
+import { Request } from '../request.class';
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: 'app-request-list',
+  templateUrl: './request-list.component.html',
+  styleUrls: ['./request-list.component.css']
 })
-export class ProductListComponent implements OnInit {
+export class RequestListComponent implements OnInit {
 
-  products: Product[] = [];
+  requests: Request[] = [];
 
   searchCriteria: string="";
   sortColumn: string ="id";
@@ -25,18 +25,20 @@ export class ProductListComponent implements OnInit {
 
 
   constructor(
-    private productsvc: ProductService
+    private requestsvc: RequestService
   ) { }
 
   ngOnInit(): void {
-    this.productsvc.list().subscribe(
+    this.requestsvc.list().subscribe(
       res => {
-        console.log("Products:", res);
-        this.products = res;
+        console.log("Users:", res);
+        this.requests = res;
       },
       err => { console.error(err); }
     );
 
   }
+
+  
 
 }

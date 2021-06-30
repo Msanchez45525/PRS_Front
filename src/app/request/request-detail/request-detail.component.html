@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+
+<div>
+    <table class="table table-sm" *ngIf="request">
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="request.id" type="number" disabled></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input [(ngModel)]="request.description" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>Justification</td>
+            <td><input [(ngModel)]="request.justification" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>RejectionReason</td>
+            <td><input [(ngModel)]="request.rejectionReason" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>DeliveryMode</td>
+            <td><input [(ngModel)]="request.deliveryMode" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><input [(ngModel)]="request.status" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td><input [(ngModel)]="request.total" type="number" disabled></td>
+        </tr>
+        <tr>
+            <td>UserId</td>
+            <td><input [(ngModel)]="request.userId" type="number" disabled></td>
+        </tr>
+        <div>
+            <button class="btn btn-danger" (click)="deleteUser()">Delete</button>
+        </div>
+    </table>
+</div>

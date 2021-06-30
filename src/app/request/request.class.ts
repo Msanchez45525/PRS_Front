@@ -9,5 +9,6 @@ export class Request {
     status: string = "";
     total : number = 0;
     userId: number = 0;
-    user: User | null = null;
+    user!: User;
+    // requestLines: RequestLine[]
 }
