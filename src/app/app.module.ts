@@ -19,6 +19,10 @@ import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.comp
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { UserSearchPipe } from './user/user-search.pipe';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
 
 
 
@@ -40,6 +44,10 @@ import { UserSearchPipe } from './user/user-search.pipe';
     VendorCreateComponent,
     VendorEditComponent,
     UserSearchPipe,
+    ProductListComponent,
+    ProductDetailComponent,
+    ProductCreateComponent,
+    ProductEditComponent,
     
   ],
   imports: [

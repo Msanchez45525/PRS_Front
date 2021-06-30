@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+
+<div>
+    <table class="table table-sm" *ngIf="product">
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="product.id" type="number" disabled></td>
+        </tr>
+        <tr>
+            <td>partNbr</td>
+            <td><input [(ngModel)]="product.partNbr" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]="product.name" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input [(ngModel)]="product.price" type="number" disabled></td>
+        </tr>
+        <tr>
+            <td>Unit</td>
+            <td><input [(ngModel)]="product.unit" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>Photopath</td>
+            <td><input [(ngModel)]="product.photopath" type="string" disabled></td>
+        </tr>
+        <tr>
+            <td>VendorId</td>
+            <td><input [(ngModel)]="product.vendorId" type="number" disabled></td>
+        </tr>
+        <div>
+            <button class="btn btn-danger" (click)="deleteProduct()">Delete</button>
+        </div>
+    </table>
+</div>

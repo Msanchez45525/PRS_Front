@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/about/about.component';
 import { E404Component } from './core/e404/e404.component';
 import { HomeComponent } from './core/home/home.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
@@ -20,9 +24,6 @@ const routes: Routes = [
   {path: 'e404', component: E404Component},
 
 
-
-
-
   {path: 'user/list' , component: UserListComponent},
   {path: 'user/detail/:id' , component: UserDetailComponent},
   {path: 'user/create' , component: UserCreateComponent},
@@ -35,7 +36,11 @@ const routes: Routes = [
   {path: 'vendor/edit/:id' , component: VendorEditComponent},
   {path: 'vendor' , redirectTo: 'vendor/list', pathMatch: 'full'},
 
-
+  {path: 'product/list' , component: ProductListComponent},
+  {path: 'product/detail/:id' , component: ProductDetailComponent},
+  {path: 'product/create' , component: ProductCreateComponent},
+  {path: 'product/edit/:id' , component: ProductEditComponent},
+  {path: 'product' , redirectTo: 'product/list', pathMatch: 'full'},
 
 
   {path: '**', component: E404Component}
