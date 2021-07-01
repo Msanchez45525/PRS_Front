@@ -35,6 +35,7 @@ import { RequestlinesEditComponent } from './requestline/requestlines-edit/reque
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,8 +63,8 @@ import { RequestlinesEditComponent } from './requestline/requestlines-edit/reque
     RequestListComponent,
     RequestLinesComponent,
     RequestlinesCreateComponent,
-    RequestlinesDetailComponent,
-    RequestlinesEditComponent,
+
+    RequestlinesEditComponent
     
   ],
   imports: [
