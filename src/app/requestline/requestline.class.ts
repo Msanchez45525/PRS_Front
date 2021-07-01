@@ -1,6 +1,6 @@
 import { Product } from "../product/product.class";
 
-export class RequestLines {
+export class RequestLine {
     id: number = 0;
     quantity: number = 0;
     requestId: number = 0;

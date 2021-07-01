@@ -30,6 +30,7 @@
             <select [(ngModel)]="product.vendorId">
                 <option *ngFor="let v of vendors" value="{{v.id}}">{{v.id}}:{{v.name}}</option>
             </select>
+        </tr>
     </table>
     <button (click)='save()' class="btn btn-primary">Save</button>
 </div>

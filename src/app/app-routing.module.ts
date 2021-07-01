@@ -20,6 +20,11 @@ import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.comp
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
 
+import { RequestLinesComponent } from './requestline/request-lines/request-lines.component';
+import { RequestlinesCreateComponent } from './requestline/requestlines-create/requestlines-create.component';
+import { RequestlinesDetailComponent } from './requestline/requestlines-detail/requestlines-detail.component';
+import { RequestlinesEditComponent } from './requestline/requestlines-edit/requestlines-edit.component';
+
 const routes: Routes = [
   {path: '' , redirectTo: '/menu', pathMatch: 'full'},
   
@@ -53,6 +58,12 @@ const routes: Routes = [
   {path: 'request/edit/:id' , component: RequestEditComponent},
   {path: 'request' , redirectTo: 'request/list', pathMatch: 'full'},
 
+
+ 
+  {path: 'request/lines/:id' , component: RequestLinesComponent},
+  {path: 'requestlines/detail/:id' , component: RequestlinesDetailComponent},
+  {path: 'requestlines/create' , component: RequestlinesCreateComponent},
+  {path: 'requestlines/edit/:id' , component: RequestlinesEditComponent},
 
   {path: '**', component: E404Component}
 
