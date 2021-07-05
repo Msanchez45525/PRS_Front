@@ -14,8 +14,10 @@ import { ProductService } from 'src/app/product/product.service';
 export class RequestlinesCreateComponent implements OnInit {
 
 
-  requestline: RequestLine = new RequestLine();
+  newRequestline = new RequestLine();
   products: Product[] = [];
+  requestId: number = 0;
+  product!: Product;
 
   constructor(
     private syssvc: SystemService,
@@ -26,12 +28,13 @@ export class RequestlinesCreateComponent implements OnInit {
 
   ) { }
 
-  save(): void {
-    this.requestline.productId = +this.requestline.productId;
-    console.debug("B4", this.requestline);
-    this.requestlinesvc.create(this.requestline).subscribe(
+  Save(): void {
+    this.newRequestline.requestId = +this.requestId;
+    this.newRequestline.productId = +this.newRequestline.productId;
+    console.debug("B4", this.newRequestline);
+    this.requestlinesvc.create(this.newRequestline).subscribe(
       res => {
-        console.log("Create successful"); this.router.navigateByUrl(`/request/lines/${this.requestline.requestId}`)
+        console.log("Create successful"); this.router.navigateByUrl(`/request/lines/${this.getId()}`);
       },
       err => {
         console.error(err);
@@ -40,12 +43,19 @@ export class RequestlinesCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
-    this.requestline.requestId = +this.route.snapshot.params.id;
     this.productsvc.list().subscribe(
       res => { console.log(res); this.products = res; },
       err => { console.error(err); }
     )
+    this.requestId = this.getId()
+
   }
 
+  getId(): number {
+    const routeParams = this.route.snapshot.paramMap;
+    const id = Number(routeParams.get('id'))
+    return id;
+
+  }
 }
+

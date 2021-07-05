@@ -44,15 +44,15 @@
             <td>{{r.quantity}}</td>
             <td>{{r.product.price | currency}}</td>
             <td>{{(r.quantity * r.product.price) | currency}}</td>
-            <!-- <td>
+            <td>
                 <span>
-                    <a routerLink="/requestlines/edit/{{r.id}}">Edit</a>
-                </span>
+                    <button> <a routerLink="/requestlines/edit/{{r.id}}">Edit</a></button>
+               </span>      
                 <span> | </span>
                 <span>
-                    <button (click)="deleteRequestline(line.id)">Delete</button>
-                </span>
-            </td> -->
+                    <button >Delete</button>
+               </span>
+            </td>
 
 
         </tr>

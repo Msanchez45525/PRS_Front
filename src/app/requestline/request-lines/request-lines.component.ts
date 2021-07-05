@@ -17,7 +17,7 @@ export class RequestLinesComponent implements OnInit {
   requests: Request[] = [];
   request!: Request;
   id: number = 0;
-  // requestline: RequestLine
+  requestline!: RequestLine
 
   constructor(
     private route: ActivatedRoute,
@@ -44,7 +44,7 @@ export class RequestLinesComponent implements OnInit {
 
   }
 
-  // edit (line)
+  
 
 
   // deleteRequestline(line.id) {

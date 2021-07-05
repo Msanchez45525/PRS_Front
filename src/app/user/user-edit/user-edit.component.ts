@@ -33,7 +33,7 @@ export class UserEditComponent implements OnInit {
     this.user.id = +this.user.id;
     console.debug("B4", this.user);
     this.usersvc.change(this.user).subscribe(
-      res => { console.log("Create successful"); this.router.navigateByUrl("user/list"); },
+      res => { console.log("Edit successful"); this.router.navigateByUrl("user/list"); },
       err => { console.error(err) });
     ;
   }

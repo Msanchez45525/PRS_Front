@@ -2,21 +2,21 @@
 <div> -->
  <table class="table table-sm">
         <tr>
-            <td>Id</td>
-            <td><input [(ngModel)]="requestline.id" type="number" disabled></td>
+            <td>Request Id</td>
+            <td><input [(ngModel)]="requestId" type="number" disabled></td>
         </tr>
         <tr>
-            <td>quantity</td>
-            <td><input [(ngModel)]="requestline.quantity" type="number" ></td>
+            <td>Quantity</td>
+            <td><input [(ngModel)]="newRequestline.quantity" type="number" ></td>
         </tr>
         <tr>
             <td>ProductId</td>
             <td>
-                <select [(ngModel)]="requestline.productId">
+                <select [(ngModel)]="newRequestline.productId">
                     <option *ngFor="let p of products" value={{p.id}}>{{p.name}}</option>
                 </select>
             </td>
         </tr>
     </table>
-    <button (click)='save()' class="btn btn-primary">Save</button>
+    <button (click)='Save()' class="btn btn-primary">Save</button>
 </div>
