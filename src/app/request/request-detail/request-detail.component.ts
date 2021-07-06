@@ -31,7 +31,7 @@ export class RequestDetailComponent implements OnInit {
 
   }
 
-  deleteUser() {
+  deleteRequest() {
     this.id = this.route.snapshot.params.id
     this.requestsvc.remove(this.id).subscribe(
       res => { console.log("Success:", res); this.request = res; this.router.navigateByUrl("request/list"); },

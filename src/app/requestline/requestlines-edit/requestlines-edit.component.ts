@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from 'src/app/product/product.class';
+import { ProductService } from 'src/app/product/product.service';
 import { RequestLine } from '../requestline.class';
 import { RequestlineService } from '../requestline.service';
 
@@ -10,6 +12,7 @@ import { RequestlineService } from '../requestline.service';
 })
 export class RequestlinesEditComponent implements OnInit {
 
+  products: Product [] = [];
   requestline!: RequestLine;
   id: number = 0;
 
@@ -17,7 +20,8 @@ export class RequestlinesEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private requestlinesvc: RequestlineService
+    private requestlinesvc: RequestlineService,
+    private productsvc: ProductService
 
   ) { }
 
@@ -25,11 +29,15 @@ export class RequestlinesEditComponent implements OnInit {
     this.id = this.route.snapshot.params.id
     this.requestlinesvc.get(this.id).subscribe(
       res => { console.log(res); this.requestline = res; },
-      err => { console.error(err) }
-    )
+      err =>  console.error(err))
+      this.productsvc.list().subscribe(
+        res => {this.products = res; console.debug("Products Loaded Success", res)},
+        err => {console.error(err)}
+      )
   }
 
   save(): void {
+    this.requestline.quantity = +this.requestline.quantity;
     this.requestline.id = +this.requestline.id;
     console.debug("B4", this.requestline);
     this.requestlinesvc.change(this.requestline).subscribe(
@@ -38,4 +46,5 @@ export class RequestlinesEditComponent implements OnInit {
     ;
   }
 
+ 
 }

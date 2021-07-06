@@ -29,8 +29,8 @@ export class RequestLinesComponent implements OnInit {
 
   review(): void {
     this.requestsvc.review(this.request).subscribe(
-      res => {console.debug("Review successful!"); this.router.navigateByUrl("request/list"); },
-      err => {console.error(err); }
+      res => { console.debug("Review successful!"); this.router.navigateByUrl("request/list"); },
+      err => { console.error(err); }
     )
 
   }
@@ -44,14 +44,10 @@ export class RequestLinesComponent implements OnInit {
 
   }
 
-  
-
-
-  // deleteRequestline(line.id) {
-  //   this.requestlinesvc.remove(this.id).subscribe(
-  //     res => { console.log("Success:", res); this.requestline = res; this.router.navigateByUrl("request/list"); },
-  //     err => { console.error(err) });
-  // }
-
+  Delete(id : number) : void{
+    this.requestlinesvc.remove(id).subscribe(
+      res => { this.requestline = res; console.debug("successfully removed", res); this.router.navigateByUrl("request/list"); },
+      err => { console.error(err) });
+  }
 
 }

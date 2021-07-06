@@ -26,6 +26,9 @@ import { RequestlinesDetailComponent } from './requestline/requestlines-detail/r
 import { RequestlinesEditComponent } from './requestline/requestlines-edit/requestlines-edit.component';
 import { RequestlinesCreateComponent } from './requestline/requestlines-create/requestlines-create.component';
 
+import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
+import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
+
 const routes: Routes = [
   {path: '' , redirectTo: '/menu', pathMatch: 'full'},
   
@@ -58,6 +61,10 @@ const routes: Routes = [
   {path: 'request/create' , component: RequestCreateComponent},
   {path: 'request/edit/:id' , component: RequestEditComponent},
   {path: 'request' , redirectTo: 'request/list', pathMatch: 'full'},
+
+  {path: 'request/review/item' , component: RequestReviewItemComponent},
+  {path: 'request/review/list' , component: RequestReviewListComponent},
+
 
 
  

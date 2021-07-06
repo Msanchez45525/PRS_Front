@@ -31,7 +31,7 @@ export class RequestListComponent implements OnInit {
   ngOnInit(): void {
     this.requestsvc.list().subscribe(
       res => {
-        console.log("Users:", res);
+        console.log("Request:", res);
         this.requests = res;
       },
       err => { console.error(err); }
