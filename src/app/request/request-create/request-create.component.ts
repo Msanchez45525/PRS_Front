@@ -11,7 +11,6 @@ import { RequestService } from '../request.service';
 })
 export class RequestCreateComponent implements OnInit {
 
-  
   request: Request = new Request();
   requests: Request[] = [];
 
@@ -23,8 +22,9 @@ export class RequestCreateComponent implements OnInit {
   ) { }
 
   save(): void {
+    
     this.request.id = +this.request.id;
-    console.debug("B4", this.request);
+    console.log("B4", this.request);
     this.requestsvc.create(this.request).subscribe(
       res => {
         console.log("Create successful"); this.router.navigateByUrl("request/list")

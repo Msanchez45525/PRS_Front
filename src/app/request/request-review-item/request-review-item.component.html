@@ -1,1 +1,29 @@
-<p>request-review-item works!</p>
+<app-menu></app-menu>
+<table *ngIf="request">
+    <thead>
+        <th style="text-align: center; font-size: 1.5rem;" class="bg-dark" colspan="8">Request</th>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <th>Justification</th>
+            <th>Rejection Reason</th>
+            <th>Delivery Mode</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Username</th>
+        </tr>
+        <tr>
+            <td>{{request.id}}</td>
+            <td>{{request.justification}}</td>
+            <td><input [(ngModel)]="request.rejectionReason" type="text"></td>
+            <td>{{request.deliveryMode}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total | currency}}</td>
+            <td>{{request.user?.username}}</td>
+        </tr>
+    </tbody>
+</table>
+<button style="margin-right: 5px;" class="btn btn-success" (click)="approved()">Approve</button>
+<button class="btn btn-danger" (click)="rejected()">Reject</button>
+<span style="color: red;">{{response}}</span>

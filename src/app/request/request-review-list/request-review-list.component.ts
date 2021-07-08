@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {  Router } from '@angular/router';
+import { SystemService } from 'src/app/core/system.service';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class';
 
@@ -9,23 +11,25 @@ import { Request } from '../request.class';
 })
 export class RequestReviewListComponent implements OnInit {
 
-  requests: Request[] = [];
-  request!: Request;
-  
+  tbl: string = "table table-dark table-striped"
+
   constructor(
-    private requestsvc: RequestService
+    private requestsvc: RequestService,
+    private router: Router,
+    private syssvc: SystemService
+    
   ) { }
+  requests: Request[] = [];
+
+  loggedInUserId = this.syssvc.loggedInUser == null ? 0 : this.syssvc.loggedInUser.id;
 
   ngOnInit(): void {
-    this.requestsvc.list().subscribe(
-      res => {
-        console.log("Request:", res);
-        this.requests = res;
-      },
-      err => { console.error(err); }
-    );
-
-    
+    if(this.syssvc.loggedInUser == null) { this.router.navigateByUrl("/login");}
+    this.requestsvc.requests(this.loggedInUserId).subscribe(
+      res => { this.requests = res; console.debug("Requests loaded successfully!", res) },
+      err => {console.error(err)}
+    )
 
   }
+
 }

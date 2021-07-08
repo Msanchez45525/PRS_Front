@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,10 +29,14 @@ import { RequestDetailComponent } from './request/request-detail/request-detail.
 import { RequestListComponent } from './request/request-list/request-list.component';
 import { RequestLinesComponent } from './requestline/request-lines/request-lines.component';
 import { RequestlinesCreateComponent } from './requestline/requestlines-create/requestlines-create.component';
-import { RequestlinesDetailComponent } from './requestline/requestlines-detail/requestlines-detail.component';
 import { RequestlinesEditComponent } from './requestline/requestlines-edit/requestlines-edit.component';
 import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
 import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+
+
+
+
 
 
 
@@ -65,11 +69,14 @@ import { RequestReviewListComponent } from './request/request-review-list/reques
     RequestListComponent,
     RequestLinesComponent,
     RequestlinesCreateComponent,
-
     RequestlinesEditComponent,
-     RequestReviewItemComponent,
-     RequestReviewListComponent
-    
+    RequestReviewItemComponent,
+    RequestReviewListComponent,
+    UserLoginComponent
+
+
+
+
   ],
   imports: [
     BrowserModule,

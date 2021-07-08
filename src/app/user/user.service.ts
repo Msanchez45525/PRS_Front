@@ -10,8 +10,10 @@ export class UserService {
 
   baseurl: string = "http://localhost:5000/api/users"
 
+
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+   
   ) { }
 
   list(): Observable<User[]> {
@@ -33,5 +35,16 @@ export class UserService {
   remove(id: number): Observable<User> {
     return this.http.delete(`${this.baseurl}/${id}`) as Observable<User>;
   }
+
+  login(username: string, password: string): Observable<User>{
+    return this.http.get(`${this.baseurl}/${username}/${password}`) as Observable<User>; 
+  }
+
+  ngOnInit(): void {
+  }
+
+
+
+
 
 }
